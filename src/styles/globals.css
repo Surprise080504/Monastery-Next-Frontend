@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Balthazar";
+  src: url("../assets/fonts/Balthazar/Balthazar-Regular.ttf");
+}
+@font-face {
+  font-family: "Germania One";
+  src: url("../assets/fonts/Germania_One/GermaniaOne-Regular.ttf");
+}
+
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
+}
