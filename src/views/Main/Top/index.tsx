@@ -14,8 +14,8 @@ const HomePage = () => {
     <Top>
       <Header />
       <HomeTop>
-        <CircleImg src="img/topmain.png" alt="" />
-        <HomeTopRightImg src="img/topImg.png" alt="" />
+        <CircleImg src="img/topmain.png" alt="" draggable={false} />
+        <HomeTopRightImg src="img/topImg.png" alt="" draggable={false} />
         <HomeTopLeft>
           <LeftTitle>Build your deck and fight fearsome enemies</LeftTitle>
           <CusBtn text="Read More" />

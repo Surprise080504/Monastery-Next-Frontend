@@ -21,5 +21,9 @@ export const CustomContainer = styled.div<CustomBtnInterface>`
   line-height: 28px;
   color: #ffffff;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
   padding: 6px 24px;
+  :hover {
+    transform: scale(1.1, 1.1);
+  }
 `;

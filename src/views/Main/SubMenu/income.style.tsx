@@ -5,9 +5,17 @@ export const Top = styled.div`
   justify-content: center;
   align-items: center;
   column-gap: 90px;
-  width: 100%;
+  width: calc(100% - 60px);
+  padding: 0 30px;
   height: 60px;
   background: #6b0309;
+  @media screen and (max-width: 1130px) {
+    column-gap: 50px;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    height: auto;
+    padding: 35px 30px;
+  }
 `;
 export const MenuItem = styled.div`
   display: flex;

@@ -9,15 +9,15 @@ const SubMenu = () => {
       </MenuItem>
       <MenuItem>
         <MenuImg src="img/exploredistinct.png" alt="" />
-        <Text>Build your deck</Text>
+        <Text>Explore distinct areas</Text>
       </MenuItem>
       <MenuItem>
         <MenuImg src="img/fight.png" alt="" />
-        <Text>Build your deck</Text>
+        <Text>Fight fearsome enemies</Text>
       </MenuItem>
       <MenuItem>
-        <MenuImg src="img/defeat" alt="" />
-        <Text>Build your deck</Text>
+        <MenuImg src="img/defeat.png" alt="" />
+        <Text>Defeat terrifying bosses</Text>
       </MenuItem>
     </Top>
   );

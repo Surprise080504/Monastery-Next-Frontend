@@ -15,6 +15,7 @@ export const FooterOut = styled.div`
   }
   @media screen and (max-width: 1200px) {
     flex-direction: column;
+    height: auto;
     padding: 50px 0;
   }
 `;

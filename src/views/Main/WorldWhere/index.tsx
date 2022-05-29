@@ -61,6 +61,9 @@ const SubMenu = () => {
             <HeroImg src="img/worldman2.png" alt="" draggable={false} />
           </DarknessRow>
         </DarkContainer>
+
+        {/* key features */}
+
         <KeyTitle>Key features</KeyTitle>
         <KeyrowContainer>
           <DarknessRow>

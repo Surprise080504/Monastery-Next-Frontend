@@ -7,8 +7,8 @@ const Home: NextPage = () => {
     <>
       <SEO title="Monastery" description="this is home page" />
       <Top />
-      {/* <SubMenu /> */}
-      {/* <WorldWhere /> */}
+      <SubMenu />
+      <WorldWhere />
     </>
   );
 };
