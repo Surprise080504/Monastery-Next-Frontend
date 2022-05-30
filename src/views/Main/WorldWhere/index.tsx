@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import CusBtn from "component/CustomBtn";
+import { useRouter } from "next/router";
 import {
   Top,
   Title,
@@ -18,6 +19,7 @@ import {
   KeyTextRow,
 } from "./worldwhere.style";
 const SubMenu = () => {
+  const router = useRouter();
   let scrollPos = 0;
   let temp = 0;
   useEffect(() => {
@@ -87,7 +89,9 @@ const SubMenu = () => {
                 increases your survival. But be aware - darkness awaits outside
                 of the gates of the Monastery!
               </DarkText>
-              <CusBtn text="Key Features" />
+              <a href="#keyfeatures">
+                <CusBtn text="Key Features" />
+              </a>
             </DarkTextContainer>
           </DarknessRow>
           <DarknessRow>
@@ -105,7 +109,9 @@ const SubMenu = () => {
                 Choose your weapons and equipment wisely to best suit your play
                 style. It's the only way to beat the terrifying bosses.
               </DarkText>
-              <CusBtn text="Visit Gallery" />
+              <span onClick={() => router.push("/gallery")}>
+                <CusBtn text="Visit Gallery" />
+              </span>
             </DarkTextContainer>
             <HeroImg
               src="img/worldman2.png"
@@ -118,7 +124,7 @@ const SubMenu = () => {
 
         {/* key features */}
 
-        <KeyTitle>Key features</KeyTitle>
+        <KeyTitle id="keyfeatures">Key features</KeyTitle>
         <KeyrowContainer>
           <DarknessRow>
             <HeroImg

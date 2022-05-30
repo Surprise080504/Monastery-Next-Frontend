@@ -6,7 +6,9 @@
   font-family: "Germania One";
   src: url("../assets/fonts/Germania_One/GermaniaOne-Regular.ttf");
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #000;
   margin: 0;
@@ -15,4 +17,7 @@ body {
 }
 ::-webkit-scrollbar {
   display: none;
+}
+a {
+  text-decoration: none !important;
 }
