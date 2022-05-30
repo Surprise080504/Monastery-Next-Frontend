@@ -55,6 +55,7 @@ export const LeftTitle = styled.div`
   }
 `;
 export const HomeTopRightImg = styled.img`
+  transition: all 2s;
   position: absolute;
   right: 0;
   bottom: 0;

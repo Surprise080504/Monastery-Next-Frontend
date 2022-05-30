@@ -11,45 +11,96 @@ import {
   HeaderItemText,
   HeaderTextItemGrp,
   SocialGrp,
+  ResMenu,
+  ResIcons,
+  ResTop,
 } from "./Header.style";
+const routerData = [
+  {
+    name: "Key Features",
+    path: "/",
+  },
+  {
+    name: "Gallery",
+    path: "/gallery",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+  {
+    name: "About Us",
+    path: "/about",
+  },
+];
 const HeaderContainer = () => {
   const router = useRouter();
   const [resmenu, setmenu] = useState(false);
 
   return (
-    <HeaderMain>
-      <HeaderLeft
-        onClick={() => {
-          router.push("/");
-        }}
-      >
-        <HeaderLogo src="img/logo.png" draggable={false} alt="" />
-      </HeaderLeft>
-
-      <HeaderRight>
-        {resmenu ? (
-          <MdOutlineClose
-            className="resbarIcon"
-            onClick={() => setmenu(false)}
-          />
-        ) : (
+    <React.Fragment>
+      <HeaderMain>
+        <HeaderLeft
+          onClick={() => {
+            router.push("/");
+          }}
+        >
+          <HeaderLogo src="img/logo.png" draggable={false} alt="" />
+        </HeaderLeft>
+        <ResIcons>
           <FaBars className="resbarIcon" onClick={() => setmenu(true)} />
-        )}
-        <HeaderTextItemGrp>
-          <HeaderItemText>Key Features</HeaderItemText>
-          <HeaderItemText>Gallery</HeaderItemText>
-          <HeaderItemText>Contact</HeaderItemText>
-          <HeaderItemText>About Us</HeaderItemText>
-        </HeaderTextItemGrp>
-        <SocialGrp>
-          <FaDiscord className="socialIcon" />
-          <BsFacebook className="socialIcon" />
-          <BsTwitter className="socialIcon" />
-          <BsYoutube className="socialIcon" />
-          <FaSteam className="socialIcon" />
-        </SocialGrp>
-      </HeaderRight>
-    </HeaderMain>
+        </ResIcons>
+        <HeaderRight>
+          <HeaderTextItemGrp>
+            {routerData.map((e, index) => (
+              <HeaderItemText key={index} onClick={() => router.push(e.path)}>
+                {e.name}
+              </HeaderItemText>
+            ))}
+          </HeaderTextItemGrp>
+          <SocialGrp>
+            <FaDiscord className="socialIcon" />
+            <BsFacebook className="socialIcon" />
+            <BsTwitter className="socialIcon" />
+            <BsYoutube className="socialIcon" />
+            <FaSteam className="socialIcon" />
+          </SocialGrp>
+        </HeaderRight>
+      </HeaderMain>
+      {resmenu && (
+        <ResMenu>
+          <ResTop>
+            <HeaderLeft
+              onClick={() => {
+                router.push("/");
+              }}
+            >
+              <HeaderLogo src="img/logo.png" draggable={false} alt="" />
+            </HeaderLeft>
+            <ResIcons>
+              <MdOutlineClose
+                className="resbarIcon"
+                onClick={() => setmenu(false)}
+              />
+            </ResIcons>
+          </ResTop>
+          <HeaderTextItemGrp>
+            {routerData.map((e, index) => (
+              <HeaderItemText key={index} onClick={() => router.push(e.path)}>
+                {e.name}
+              </HeaderItemText>
+            ))}
+          </HeaderTextItemGrp>
+          <SocialGrp>
+            <FaDiscord className="socialIcon" />
+            <BsFacebook className="socialIcon" />
+            <BsTwitter className="socialIcon" />
+            <BsYoutube className="socialIcon" />
+            <FaSteam className="socialIcon" />
+          </SocialGrp>
+        </ResMenu>
+      )}
+    </React.Fragment>
   );
 };
 export default HeaderContainer;

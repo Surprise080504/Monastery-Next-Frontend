@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CusBtn from "component/CustomBtn";
 import {
   Top,
@@ -18,6 +18,41 @@ import {
   KeyTextRow,
 } from "./worldwhere.style";
 const SubMenu = () => {
+  let scrollPos = 0;
+  let temp = 0;
+  useEffect(() => {
+    scrollPos = document.documentElement.scrollTop;
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const handleScroll = () => {
+    const man1: any = document.getElementById("man1");
+    const man1W: any = document.getElementById("man1-wrapper");
+    const man2: any = document.getElementById("man2");
+    const manY = [
+      {
+        elem: man1,
+        y:
+          man1W?.getBoundingClientRect().y +
+          man1W?.getBoundingClientRect().height,
+      },
+    ];
+    const scrollTop = document.documentElement.scrollTop;
+
+    for (let i = 0; i < manY.length; i++) {
+      if (manY[i].y < window.innerHeight && manY[i].y > 0) {
+        manY[i].elem.style.transform = `translateY(${temp}px)`;
+        if (scrollPos > scrollTop) {
+          if (temp < 0) temp += 2.5;
+        } else {
+          if (temp > -100) temp -= 2.5;
+        }
+        scrollPos = scrollTop;
+      }
+    }
+  };
   return (
     <WorldWhere>
       <RedGradient />
@@ -27,8 +62,19 @@ const SubMenu = () => {
         </Title>
         <DarkContainer>
           <DarknessRow>
-            <HeroImg src="img/worldman.png" alt="" draggable={false} />
-            <DarkTextContainer ml="70px">
+            <div id="man1-wrapper">
+              <HeroImg
+                src="img/worldman.png"
+                alt=""
+                draggable={false}
+                id="man1"
+              />
+            </div>
+            <DarkTextContainer
+              ml="70px"
+              data-aos="fade-left"
+              className="aos-init aos-animate"
+            >
               <DarkTitle>Darkness awaits…</DarkTitle>
               <DarkText>
                 The Monastery is a roguelite deckbuilder that follows the
@@ -45,7 +91,10 @@ const SubMenu = () => {
             </DarkTextContainer>
           </DarknessRow>
           <DarknessRow>
-            <DarkTextContainer>
+            <DarkTextContainer
+              data-aos="fade-right"
+              className="aos-init aos-animate"
+            >
               <DarkTitle>Be prepared!</DarkTitle>
               <DarkText>
                 Monastery offers plenty of challenges! Cut through different
@@ -58,7 +107,12 @@ const SubMenu = () => {
               </DarkText>
               <CusBtn text="Visit Gallery" />
             </DarkTextContainer>
-            <HeroImg src="img/worldman2.png" alt="" draggable={false} />
+            <HeroImg
+              src="img/worldman2.png"
+              alt=""
+              draggable={false}
+              id="man2"
+            />
           </DarknessRow>
         </DarkContainer>
 
@@ -67,7 +121,13 @@ const SubMenu = () => {
         <KeyTitle>Key features</KeyTitle>
         <KeyrowContainer>
           <DarknessRow>
-            <HeroImg src="img/keyfeature1.png" alt="" draggable={false} />
+            <HeroImg
+              src="img/keyfeature1.png"
+              alt=""
+              draggable={false}
+              data-aos="zoom-in"
+              className="aos-init aos-animate"
+            />
             <KeyTextContainer>
               <KeyTextRow>
                 <DarkTextImg src="img/limark.png" alt="" draggable={false} />
@@ -118,10 +178,22 @@ const SubMenu = () => {
                 </span>
               </KeyTextRow>
             </KeyTextContainer>
-            <HeroImg src="img/keyfeature2.png" alt="" draggable={false} />
+            <HeroImg
+              src="img/keyfeature2.png"
+              alt=""
+              draggable={false}
+              data-aos="zoom-in"
+              className="aos-init aos-animate"
+            />
           </DarknessRow>
           <DarknessRow>
-            <HeroImg src="img/keyfeature3.png" alt="" draggable={false} />
+            <HeroImg
+              src="img/keyfeature3.png"
+              alt=""
+              draggable={false}
+              data-aos="zoom-in"
+              className="aos-init aos-animate"
+            />
             <KeyTextContainer>
               <KeyTextRow>
                 <DarkTextImg src="img/limark.png" alt="" draggable={false} />

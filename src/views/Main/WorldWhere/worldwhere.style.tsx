@@ -44,6 +44,7 @@ export const KeyTitle = styled.div`
   @media screen and (max-width: 800px) {
     font-size: 30px;
     width: 230px;
+    margin: 50px 0;
   }
 `;
 export const Title = styled.div`
@@ -108,8 +109,10 @@ export const DarknessRow = styled.div`
   }
 `;
 export const HeroImg = styled.img`
+  transition: all 2s;
   @media screen and (max-width: 1170px) {
     order: 1;
+    transform: unset !important;
   }
   @media screen and (max-width: 580px) {
     width: 300px;
@@ -179,6 +182,9 @@ export const KeyTextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   row-gap: 40px;
+  @media screen and (max-width: 1170px) {
+    order: 2;
+  }
 `;
 export const KeyTextRow = styled.div`
   width: 470px;

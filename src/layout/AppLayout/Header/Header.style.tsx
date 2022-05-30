@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const HeaderMain = styled.div`
-  margin-top: 21.63px;
-  width: 100%;
+  width: calc(100% - 130px);
   z-index: 100;
   background-color: transparent;
   align-items: center;
   display: flex;
   justify-content: space-between;
+  padding: 21.63px 65px 0;
+  @media screen and (max-width: 1100px) {
+    width: calc(100% - 60px);
+    padding: 21.63px 30px 0;
+    /* background-color: #000; */
+  }
 `;
 export const HeaderLeft = styled.div`
   font-family: "Sans";
@@ -19,26 +24,13 @@ export const HeaderLeft = styled.div`
   align-items: center;
   line-height: 29px;
   color: #000000;
-  margin-left: 65px;
-  @media screen and (max-width: 1100px) {
-    margin-left: 30px;
-  }
 `;
 export const HeaderRight = styled.div`
   display: flex;
   align-items: center;
   column-gap: 30px;
-  margin-right: 65px;
-  .resbarIcon {
+  @media screen and (max-width: 950px) {
     display: none;
-    color: #c4c4c4;
-    font-size: 24px;
-    @media screen and (max-width: 950px) {
-      display: flex;
-    }
-  }
-  @media screen and (max-width: 1100px) {
-    margin-right: 30px;
   }
 `;
 export const HeaderLogo = styled.img``;
@@ -77,9 +69,11 @@ export const HeaderItemText = styled.div`
 export const HeaderTextItemGrp = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 30px;
+  gap: 30px;
   @media screen and (max-width: 950px) {
-    display: none;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding-top: 52.5px;
   }
 `;
 export const SocialGrp = styled.div`
@@ -96,8 +90,39 @@ export const SocialGrp = styled.div`
       color: #c25200;
     }
   }
-
+`;
+export const ResMenu = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 101;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
   @media screen and (max-width: 950px) {
-    display: none;
+    display: flex;
   }
+`;
+export const ResIcons = styled.div`
+  .resbarIcon {
+    display: none;
+    color: #c4c4c4;
+    font-size: 24px;
+    cursor: pointer;
+    @media screen and (max-width: 950px) {
+      display: flex;
+    }
+  }
+`;
+export const ResTop = styled.div`
+  display: flex;
+  width: calc(100% - 60px);
+  padding: 21.63px 30px 0;
+  align-items: center;
+  justify-content: space-between;
 `;

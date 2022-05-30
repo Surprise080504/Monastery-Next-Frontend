@@ -19,7 +19,9 @@ export const FooterOut = styled.div`
     padding: 50px 0;
   }
 `;
-export const FooterLogoImg = styled.img``;
+export const FooterLogoImg = styled.img`
+  cursor: pointer;
+`;
 export const MiddleText = styled.div`
   font-family: "Balthazar";
   font-style: normal;

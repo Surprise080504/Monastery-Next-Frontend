@@ -8,6 +8,9 @@ export const FooterOut = styled.div`
   padding-top: 170px;
   padding-bottom: 45px;
   position: relative;
+  @media screen and (max-width: 600px) {
+    padding-top: 60px;
+  }
 `;
 
 export const Title = styled.div`
